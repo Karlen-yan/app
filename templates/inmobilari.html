@@ -1,0 +1,23 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+<div class="col-auto  p-5 text-center">
+    <h1 class="h1_inmobiliaria animate__animated animate__jello">Inmuebles de la ciudad de Barcelona en edificios destinados principalmente a vivienda segun numero de plantas sota rasante</h1>
+    <br>
+    <p class="p_inmobiliaria">Inmuebles en edificios destinados principalmente a vivienda segun numero de plantas sota rasante. Datos del Censo de Edificios 2011</p>
+    <br>
+    {%for table in tables%}
+    <center>
+        <tr>
+            <th>{{titles[loop.index]}}</th>
+            {{table | safe }}
+        </tr>
+    </center>
+    {%endfor%}
+</div>
+</center>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

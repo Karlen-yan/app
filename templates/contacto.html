@@ -1,0 +1,100 @@
+{% extends 'layout.html'%} {% block body %}
+<!-- Columnas de formulario y mapa  -->
+<div class="container mt-5 mb-5 ">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3 border bg-light animate__animated animate__slideInLeft">
+                <h2  style="color:#263238ea;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          ">
+                    Empresa de Reformas y Construcción en Barcelona 99, 08019
+                </h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47879.39365345966!2d2.1695510791015633!3d41.40748649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a347777eb049%3A0xd9646aee5525e4c!2sEmpresa%20de%20Reformas%20Integrales%20y%20Construcci%C3%B3n%20en%20Barcelona%20%7C%20ADAPTA%20REFORMAS!5e0!3m2!1ses!2ses!4v1651871878339!5m2!1ses!2ses"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light animate__animated animate__slideInRight">
+                <h1 class="link-primary">
+                    Contacta con nosotros
+                </h1>
+                <form action="/contacto" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Nombre
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nom"
+                                name="nom"
+                                aria-describedby="emailHelp"
+                            >
+                        </label>
+                        <div id="emailHelp" class="form-text">
+                            Nunca compartiremos su nombre con nadie más
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Email
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="exampleInputEmail1"
+                                name="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                            >
+                        </label>
+                        <div id="emailHelp" class="form-text">
+                            Nunca compartiremos su correo electrónico con nadie más
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ident" class="form-label">
+                            Identificación
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="ident"
+                                name="ident"
+                                aria-describedby="emailHelp"
+                            >
+                        </label>
+                        <div id="emailHelp" class="form-text">
+                            Nunca compartiremos su Identificación con nadie más
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="area" class="form-label">
+                            En que podemos ayudarte ?
+                        
+                        <textarea
+                            class="form-control"
+                            id="area"
+                            name="area"
+                            rows="3"
+                        ></textarea>
+                    </label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">
+                            Me echa un vistazo
+                        </label
+            >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

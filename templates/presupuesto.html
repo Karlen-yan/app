@@ -1,0 +1,59 @@
+{% extends 'layout.html'%}
+{% block body %}
+<!-- main formulario -->
+<div class="content__page-budget-description">
+    <div class="content__page-budget-description-fond">
+        <h1>Generador de Presupuesto de Baño</h1>
+        
+        <p>Utiliza esta herramienta para obtener un estimado del costo de tu reforma de baño. Selecciona los detalles y la cantidad de materiales que necesitas para tu proyecto.</p>
+
+    </div>
+</div>
+<div class="container content__page-budget" data-aos="fade-up">
+    <div class="row align-items-start">
+        <form action="/presupuesto" method="post">
+            <h1 class="content__page-h1">Presupuesto de Baño</h1>
+            {% for i in range(1, 7) %}
+             <div
+                 class="col form__budget-item"
+                 data-aos="random"   
+             >
+                 <div class="col-lg-12 form__budget-item-numbers">
+                   <div class="step-number {% if loop.index == selected_step %}activ{% endif %}">{{ i }}</div>
+                   <div>
+                     <h4>Elige las detalles y cantidad de detalles</h4>
+                     <select
+                         class="form-select"
+                         aria-label="Default select example"
+                         id="detalles{{ i }}"
+                         name="detalles{{ i }}"
+                     >
+                         <option value="0" selected>Detalles de baño</option>
+                         <option value="1">Lavabo con mueble, espejo y aplique incluido</option>
+                         <option value="2">Inodoro</option>
+                         <option value="3">Plato de ducha</option>
+                         <option value="4">Griferío Ducha</option>
+                         <option value="5">Mampara Ducha panel fijo</option>
+                         <option value="6">Instalación de sanitarios y griferio</option>
+                     </select>
+                     <label for="inputNumber_mater{{ i }}" class="form-label">
+                         Cantidad de materiales
+                         <input
+                             type="number"
+                             class="form-control"
+                             id="inputNumber_mater{{ i }}"
+                             name="inputNumber_mater{{ i }}"
+                             placeholder="Ingrese Cantidad"
+                         >
+                     </label>
+                   </div>
+                 </div>
+                </div>
+                {% endfor %}
+                <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block body %}
+      <!-- contenida resultado de presupuesto  -->
+      <div class="container resultado_precio">
+        <div class="row align-items-start">
+            <div class="col">
+                <img class="logo_result_pagin" src="/static/img/LOGO.jpg"  alt="">
+              
+            </div>
+            <div class="col">
+              <p>Grupo ARM PROJECT BARCELONA 367</p>
+              <p>Passeing Sant Gaviasl, 90 08022 </p>
+              <p>Tel. 632 582 005 / 632 582 600 </p>
+              <p>C.I.F 6677555775 </p>
+            </div>
+            </div><br>
+         <h2>Presupuesto de consulta</h2>
+    <ol class="ol_presupuesto_lista">  
+         
+        <li>El presio total de Lavabo con mueble, espejo y aplique incluido es :  <b>{{respuest1}}€</b></li>
+        <li>El precio total de inodoro es :   <b>{{respuest2}} €</b></li>
+        <li>El precio total de Plato de ducha es :  <b>{{respuest3}} €</b></li>
+        <li>El precio total de Grifería lavabo es :  <b>{{respuest4}}€</b> </li>
+        <li>El precio total de Mampara Ducha panel fijo es : <b>{{respuest5}} €</b></li>
+        <li>El precio total de Instalación de sanitarios y griferia es :  <b>{{respuest6}}€</b> </li>     
+    </ol>
+    
+    <h3 class="h3_total_result">TOTAL : {{total}}€</h3>
+
+    
+  </div> 
+  <form action="/descargar_presupuesto" method="post">
+
+   <input type="hidden" name="respuest1" value="{{ respuest1 }}">
+   <input type="hidden" name="respuest2" value="{{ respuest2 }}">
+   <input type="hidden" name="respuest3" value="{{ respuest3 }}">
+   <input type="hidden" name="respuest4" value="{{ respuest4 }}">
+   <input type="hidden" name="respuest5" value="{{ respuest5 }}">
+   <input type="hidden" name="respuest6" value="{{ respuest6 }}">
+   <input type="hidden" name="total" value="{{ total }}">
+   <div class="d-flex justify-content-center form__containebtn-descargar">
+    <button  type="submit" class="btn btn-primary form__btn-descargar">Descargar</button>
+    </div>
+
+</form>
+
+
+   {% endblock %}
